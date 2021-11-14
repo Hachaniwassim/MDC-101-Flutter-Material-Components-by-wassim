@@ -79,6 +79,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: const Text('NEXT'),
                 onPressed: () {
                   // TODO: Show the next page (101)
+                  _usernameController.clear();
+                  _passwordController.clear();
                 },
               ),
               // TODO: Add a beveled rectangular border to CANCEL (103)
