@@ -19,7 +19,9 @@ class LoginPage extends StatefulWidget {
 
   @override
   _LoginPageState createState() => _LoginPageState();
-  
+  // TODO: Add text editing controllers (101)
+  final _usernameController = TextEditingController();
+  final _passwordController = TextEditingController();
 }
 
 class _LoginPageState extends State<LoginPage> {
@@ -41,8 +43,9 @@ class _LoginPageState extends State<LoginPage> {
             ),
             const SizedBox(height: 120.0),
             // TODO: Add TextField widgets (101)
-// [Name]
+            // [Name]
             TextField(
+              controller: _usernameController,
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Username',
@@ -52,6 +55,7 @@ class _LoginPageState extends State<LoginPage> {
             const SizedBox(height: 12.0),
 // [Password]
             TextField(
+              controller: _passwordController,
               decoration: const InputDecoration(
                 filled: true,
                 labelText: 'Password',
@@ -65,6 +69,8 @@ class _LoginPageState extends State<LoginPage> {
                 child: const Text('CANCEL'),
                 onPressed: () {
                   // TODO: Clear the text fields (101)
+                  _usernameController.clear();
+                  _passwordController.clear();
                 },
               ),
               // TODO: Add an elevation to NEXT (103)
